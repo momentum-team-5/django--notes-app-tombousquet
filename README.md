@@ -11,7 +11,7 @@ Today, you are learning how to create a new Django project and working with view
 * Create a new Django project.
 * Create an app inside that project called `notes`.
 * Create a view called `notes_list` to show you the list of all your notes in `notes/views.py` and link this view to the root URL. Create a template for this view.
-* Create a view called `notes_detail` to show you all the information about a single note in `notes/views.py` and link this view to `/notes/<pk>`. Create a template for this view.
+* Create a view called `notes_detail` to show you all the information about a single note in `notes/views.py` and link this view to `/notes/<int:pk>`. Create a template for this view.
 * Extract the common pieces of your templates and use template inheritance to make a `base.html` template that both your notes view and notes detail templates inherit from.
 
 ### Your notes

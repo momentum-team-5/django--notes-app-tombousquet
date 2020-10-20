@@ -1,0 +1,28 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       {% block meta %} {% endblock %}
+       <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <title> {% block title %} Notes {% endblock %}</title>
+    </head>
+    <body>
+        {% block content %}
+        {% for note in notes %}
+        <div>
+        <h3>{{ note.title }}</h3>
+        <p>
+            <pre>
+            {{ note.body }}
+            </pre>
+        </p>
+        <p><a href="{% url 'notes_list' pk=note.pk %}">View this Note</p>
+        </div>
+            {% endfor %}
+
+        {% endblock %}
+    </body>    
+</html>
