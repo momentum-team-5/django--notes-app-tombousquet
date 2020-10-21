@@ -40,16 +40,16 @@ def notes_delete(request, pk):
     note.delete()
     return redirect(to="notes_list")
 
-def contact(request):
+def contact_us(request):
     if request.method == "GET":
         form = ContactForm()
     else:
-        form = ContactForm(data.request.POST)
+        form = ContactForm(data=request.POST)
         if form.is_valid():
             send_confirmation = form.cleaned_data['email']
             message_title = form.cleaned_data['title']
             message_body = form.cleaned_data['body']
-            send_mail("Message delivered", "Due to COVID-19, message are repsonded to on a monthly basis", recipient_list=[send_confirmation])
+            send_mail("Message delivered", "Due to COVID-19, message are responded to on a monthly basis", recipient_list=[send_confirmation])
             mail_admins(message_title, message_body, fail_silently=True)
             return redirect(to='notes_list')
-        return render(request, "contact_us.html", {'form': form})                                                     
+    return render(request, "notes/contact_us.html", {'form': form})                                                     
