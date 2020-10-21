@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "notes/base.html" %}
 
 {% block content %}
 <h2>View All Notes</h2>
@@ -11,7 +11,7 @@
       {{ note.body }}
     </pre>
   </p>
-  <p><a href="{% url 'notes_list' pk=note.pk %}">View this Note</p>
+  <p><a href="{% url 'notes_detail' pk=note.pk %}">View this Note</p>
 </div>
 {% endfor %}
 

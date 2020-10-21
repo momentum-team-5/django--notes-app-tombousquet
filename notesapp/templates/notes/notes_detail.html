@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "notes/base.html" %}
 
 {% block title %}{{ note.title }}{% endblock %}
 
@@ -16,5 +16,11 @@
       {{ note.updated_at }}
     </pre>
   </p>
+</div>
+<div>
+    <p>
+        <a href="{% url 'notes_edit' pk=note.pk %}">Edit this note</a>
+        <a href="{% url 'notes_delete' pk=note.pk %}">Delete this note</a>
+    </p>
 </div>
 {% endblock %}
