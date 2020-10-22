@@ -13,6 +13,8 @@ django-registration-redux = "*"
 django-environ = "*"
 pylint = "*"
 environ = "*"
+import = "*"
+prospector = "*"
 
 [requires]
 python_version = "3.8"

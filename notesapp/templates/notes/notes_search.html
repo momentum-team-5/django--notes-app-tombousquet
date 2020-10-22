@@ -1,13 +1,12 @@
 {% extends "notes/base.html" %}
 
 {% block content %}
-<h2>Tell us what you think</h2>
-
-<form method="POST">
+<h3>Notes Search</h3>
+<form class="search-form" method="POST">
     {% csrf_token %}
+
     {{ form.as_p }}
 
-    <input type="submit" value="Send Message">
+    <input type="submit" value="Search Notes">
 </form>
-
 {% endblock %}

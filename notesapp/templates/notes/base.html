@@ -10,20 +10,14 @@
         <title> {% block title %} Here's What We Got {% endblock %}</title>
     </head>
     <body>
-        {% block content %}
-        {% for note in notes %}
-        <div>
-        <h3>{{ note.title }}</h3>
-        <p>
-            <pre>
-            {{ note.body }}
-            </pre>
+        <p><a href="{% url 'notes_list' %}">View Notes</a>
+            <a href="{% url 'notes_search' %}">Search Notes</a>
+            <a href="{% url 'notes_add' %}">Add a Note</a>
         </p>
-        <p><a href="{% url 'notes_list' %}">View Notes</p>
-        <p><a href="{% url 'contact_us' %}">Reach out!</p>
-        </div>
-            {% endfor %}
-
+        <div>
+        {% block content %}
         {% endblock %}
+        </div>
+        <p><a href="{% url 'contact_us' %}">Reach out!</p>
     </body>    
 </html>
